@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
 
 public class BstOperations {
 
@@ -13,7 +15,7 @@ public class BstOperations {
             String query = scanner.nextLine();
             String[] splittedQuery = query.split(" ");
             String operation = splittedQuery[0];
-            String value = splittedQuery[1];
+            int value = Integer.parseInt(splittedQuery[1]);
             if ("i".equals(operation)) {
                 System.out.println(addValue(value));
             }
@@ -25,7 +27,7 @@ public class BstOperations {
     }
 
 
-    private static int addValue(String value) {
+    private static int addValue(int value) {
         int index = 0;
         if (binaryTree == null) {
             binaryTree = new BinaryTree();
@@ -59,16 +61,16 @@ public class BstOperations {
         BinaryTree right = binaryTree.getRight();
         if (right.hasEmptyLeaf()) {
             return right;
-        } else  {
+        } else {
             return left;
         }
     }
 
 
-    private static int deleteValue(String value) {
+    private static int deleteValue(int value) {
         int index = 0;
         Queue<BinaryTree> q = new LinkedList<>();
-        if (binaryTree.getValue().equals(value)) {
+        if (binaryTree.getValue() == value) {
             index = binaryTree.getIndex();
             binaryTree = null;
             return index;
@@ -77,13 +79,13 @@ public class BstOperations {
         q.add(binaryTree);
         while (q.size() > 0) {
             queueValue = q.peek();
-            if (queueValue.getValue().equals(value)) {
+            if (queueValue.getValue() == value) {
                 index = queueValue.getIndex();
                 break;
             }
             q.remove();
             if (queueValue.getRight() != null) {
-                if (queueValue.getRight().getValue().equals(value)) {
+                if (queueValue.getRight().getValue() == value) {
                     index = queueValue.getRight().getIndex();
                     queueValue.setRight(null);
                     break;
@@ -92,7 +94,7 @@ public class BstOperations {
             }
 
             if (queueValue.getLeft() != null) {
-                if (queueValue.getLeft().getValue().equals(value)) {
+                if (queueValue.getLeft().getValue() == value) {
                     index = queueValue.getLeft().getIndex();
                     queueValue.setLeft(null);
                     break;
@@ -107,7 +109,7 @@ public class BstOperations {
 
 class BinaryTree {
     private int index;
-    private String value;
+    private int value;
     private BinaryTree left;
     private BinaryTree right;
 
@@ -123,11 +125,11 @@ class BinaryTree {
         this.index = index;
     }
 
-    public String getValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(int value) {
         this.value = value;
     }
 
