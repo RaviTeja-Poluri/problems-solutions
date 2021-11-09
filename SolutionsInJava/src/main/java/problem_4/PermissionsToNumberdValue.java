@@ -1,3 +1,5 @@
+package problem_4;
+
 /**
 *** class will convert given permissions to numbered value.
 *** provided each permission has value defined
@@ -38,18 +40,12 @@ public class PermissionsToNumberdValue{
     }
 
     private static int getNumber(String val) {
-        switch (val) {
-            case "w":
-                return 2;
-            case "r":
-                return 4;
-            case "x":
-                return 1;
-            case "-":
-                return 0;
-
-        }
-        return 0;
+        return switch (val) {
+            case "w" -> 2;
+            case "r" -> 4;
+            case "x" -> 1;
+            default -> 0;
+        };
     }
 
 

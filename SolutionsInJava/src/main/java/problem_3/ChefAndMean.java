@@ -1,10 +1,12 @@
+package problem_3;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class ChefAndMean {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int testCases = scanner.nextInt();

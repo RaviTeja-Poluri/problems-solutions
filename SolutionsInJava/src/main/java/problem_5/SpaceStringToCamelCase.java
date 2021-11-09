@@ -1,15 +1,14 @@
-    
-    impot java.util.*;
-    
-    /**
-     ** This class will convert space seperated string to camel case
-     ** Ex: "class name is camel case" will be converted to classNameInCamelCase
-    **/
-    public class SpaceStringToCamelCase{
-            public static void main(String[] args) {
+package problem_5;
+
+/**
+ * * This class will convert space seperated string to camel case
+ * * Ex: "class name is camel case" will be converted to classNameInCamelCase
+ **/
+public class SpaceStringToCamelCase {
+    public static void main(String[] args) {
         String name = "class name is camel case";
         System.out.println(spaceStringToCamelCaseString(name));
-        }
+    }
 
 
     public static String spaceStringToCamelCaseString(String name) {
@@ -19,9 +18,9 @@
             String atPosition = splittedString[i];
             char c = atPosition.charAt(0);
             String remainingString =
-                new String(new char[]{c}).toUpperCase() + atPosition.substring(1);
+                    String.valueOf(c).toUpperCase() + atPosition.substring(1);
             finalString.append(remainingString);
         }
         return finalString.toString();
     }
-    }
+}

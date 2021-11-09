@@ -1,3 +1,5 @@
+package problem_2;
+
 import java.util.*;
 
 /**
@@ -52,7 +54,6 @@ public class CamelCaseStringToSpacedString{
                 j = i;
             }
             ++i;
-            System.out.println("at position: " + i);
         }
         finalString.append(lastName);
         return finalString.toString().toLowerCase();

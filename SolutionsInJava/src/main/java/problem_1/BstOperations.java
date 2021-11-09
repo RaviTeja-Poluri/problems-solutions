@@ -1,3 +1,5 @@
+package problem_1;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -28,7 +30,7 @@ public class BstOperations {
 
 
     private static int addValue(int value) {
-        int index = 0;
+        int index;
         if (binaryTree == null) {
             binaryTree = new BinaryTree();
             index = 1;
@@ -151,7 +153,7 @@ class BinaryTree {
 
     @Override
     public String toString() {
-        return "BinaryTree{" +
+        return "problem_1.BinaryTree{" +
                 "index=" + index +
                 ", value='" + value + '\'' +
                 ", left=" + left +
